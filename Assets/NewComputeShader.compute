@@ -1,0 +1,9 @@
+#pragma kernel Mul2
+
+RWStructuredBuffer<float> Result;
+
+[numthreads(8,1,1)]
+void Mul2 (uint3 id : SV_DispatchThreadID)
+{
+    Result[id.x] = Result[id.x] * 3.0f;
+}
